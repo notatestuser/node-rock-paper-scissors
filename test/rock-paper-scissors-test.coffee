@@ -1,10 +1,10 @@
 vows = require 'vows'
 assert = require 'assert'
 
-RockPaperScissors = require '../lib/RockPaperScissors'
+RockPaperScissors = require '../lib/rock-paper-scissors'
 
 getGameInstance = (shufflePlayers) ->
-      weaponSet = require '../lib/weapon-sets/Traditional'
+      weaponSet = require '../lib/weapon-sets/traditional-set'
       new RockPaperScissors weaponSet, shufflePlayers
 
 vows

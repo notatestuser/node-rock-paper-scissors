@@ -9,7 +9,7 @@ class RockPaperScissors
 
   ## constants
 
-  @DefaultWeaponSet: module.require('./weapon-sets/Traditional')
+  @DefaultWeaponSet: module.require('./weapon-sets/traditional-set')
 
   ## methods
 
