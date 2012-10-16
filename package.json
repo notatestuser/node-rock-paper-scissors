@@ -9,7 +9,11 @@
     "assert": "latest"
   },
   "script": {
-     "test": "vows --spec"
-   },
+    "test": "vows --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/notatestuser/node-rock-paper-scissors.git"
+  },
   "license": "MIT"
 }
