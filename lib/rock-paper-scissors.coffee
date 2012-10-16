@@ -69,4 +69,7 @@ class RockPaperScissors
       else # both players are dead
         "#{player1Full} and #{player2Full} killed each other"
 
+  isGameOver: ->
+    result.length <= 1 or ( result.length is 2 and result[0].alive and result[1].alive )
+
 module.exports = RockPaperScissors

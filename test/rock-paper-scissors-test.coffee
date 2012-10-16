@@ -55,7 +55,7 @@ vows
 
                   'and post-fight':
                      'playRoundForText() describes the final fight if called to fight again': (game) ->
-                        assert.equal game.playRoundForText(), "Nina Williams's Rock crushed Prototype Jack's Scissors"
+                        assert.equal game.playRoundForText(), "Nina Williams's Rock crushes Prototype Jack's Scissors"
 
                      'and finally':
                         'there is only one true victor': (game) ->
