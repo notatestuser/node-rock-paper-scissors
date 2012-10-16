@@ -1,0 +1,15 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "0.1.2",
+  "author": "Luke Plaster <notatestuser@gmail.com>",
+  "description": "an example library that implements a take on multiplayer Rock, Paper, Scissors",
+  "main": "./lib/rock-paper-scissors",
+  "devDependencies": {
+    "vows": "latest",
+    "assert": "latest"
+  },
+  "script": {
+     "test": "vows --spec"
+   },
+  "license": "MIT"
+}
