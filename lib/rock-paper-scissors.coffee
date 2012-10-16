@@ -35,15 +35,15 @@ class RockPaperScissors
     if @players.length >= 2
       shuffleArray @players if @shuffle
       
-      [ player1, player2 ] = [ @players.shift(), @players.shift() ]
+      [ @lastPlayer1, @lastPlayer2 ] = [ @players.shift(), @players.shift() ]
 
-      player1.alive = false if Object.keys( @weapons[player2.weapon] ).indexOf( player1.weapon ) > -1
-      player2.alive = false if Object.keys( @weapons[player1.weapon] ).indexOf( player2.weapon ) > -1
+      @lastPlayer1.alive = false if Object.keys( @weapons[@lastPlayer2.weapon] ).indexOf( @lastPlayer1.weapon ) > -1
+      @lastPlayer2.alive = false if Object.keys( @weapons[@lastPlayer1.weapon] ).indexOf( @lastPlayer2.weapon ) > -1
 
-      @players.push(player1) unless not player1.alive
-      @players.push(player2) unless not player2.alive
+      @players.push(@lastPlayer1) unless not @lastPlayer1.alive
+      @players.push(@lastPlayer2) unless not @lastPlayer2.alive
       
-      [ player1, player2 ]
+      [ @lastPlayer1, @lastPlayer2 ]
     else
       @players
 
@@ -70,6 +70,6 @@ class RockPaperScissors
         "#{player1Full} and #{player2Full} killed each other"
 
   isGameOver: ->
-    result.length <= 1 or ( result.length is 2 and result[0].alive and result[1].alive )
+    @players.length <= 1 or ( @players.length is 2 and @lastPlayer1 is @players[0] and @lastPlayer2 is @players[1] )
 
 module.exports = RockPaperScissors

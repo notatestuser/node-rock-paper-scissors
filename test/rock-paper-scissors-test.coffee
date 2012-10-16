@@ -25,6 +25,9 @@ vows
             'and outputs an appropriate "everyone died" message': (game) ->
                assert.equal game.playRoundForText(), 'All players have killed each other - nobody wins'
 
+            'is a "game over" situation': (game) ->
+               assert.ok game.isGameOver()
+
             'and a player is added':
                topic: (game) ->
                   game.addPlayer('Paul Phoenix', 'Paper')
@@ -35,6 +38,9 @@ vows
                      weapon: 'Paper'
                      alive: true
                   ]
+
+               'we have a "game over" situation': (game) ->
+                  assert.ok game.isGameOver()
 
                'and another two players are added':
                   topic: (game) ->
@@ -53,6 +59,9 @@ vows
                         alive: true
                      ]
 
+                  'we do not have a "game over" situation': (game) ->
+                     assert.ok not game.isGameOver()
+
                   'and post-fight':
                      'playRoundForText() describes the final fight if called to fight again': (game) ->
                         assert.equal game.playRoundForText(), "Nina Williams's Rock crushes Prototype Jack's Scissors"
@@ -60,5 +69,8 @@ vows
                      'and finally':
                         'there is only one true victor': (game) ->
                            assert.equal game.playRoundForText(), "Nina Williams has won the game with their Rock"
+
+                        'and we have a "game over" situation': (game) ->
+                           assert.ok game.isGameOver()
    
    ).export(module)
